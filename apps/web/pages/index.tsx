@@ -1,5 +1,7 @@
 import Head from "next/head";
+import type { NextPage } from "next";
 import { Button, Card } from "ui";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const CARD_CONTENT = [
   {
@@ -19,7 +21,7 @@ const CARD_CONTENT = [
   },
 ];
 
-export default function Page() {
+const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -34,7 +36,7 @@ export default function Page() {
           </span>
         </h1>
         <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
+          <ConnectButton />
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
@@ -45,4 +47,6 @@ export default function Page() {
       </main>
     </div>
   );
-}
+};
+
+export default Home;
