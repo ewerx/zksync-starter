@@ -12,6 +12,7 @@ coverage
 .next/
 out/
 build
+.swc/
 
 # misc
 .DS_Store
@@ -34,3 +35,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# ui
+dist/
