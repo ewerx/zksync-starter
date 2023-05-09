@@ -1,0 +1,10 @@
+{
+  "name": "local",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "node": "./start.sh",
+    "node:clean": "./clear.sh"
+  }
+}

@@ -1,4 +1,9 @@
 {
+  "name": "create-zksync-turbo",
+  "description": "A starter template for zkSync dApps",
+  "author": "ewerx",
+  "license": "MIT",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -14,6 +19,5 @@
     "prettier-plugin-tailwindcss": "^0.1.11",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@7.15.0",
-  "name": "create-zksync-turbo"
+  "packageManager": "pnpm@7.15.0"
 }

@@ -14,6 +14,20 @@
     },
     "clean": {
       "cache": false
+    },
+    "compile": {
+      "cache": false
+    },
+    "deploy": {
+      "cache": false,
+      "dependsOn": ["^compile"]
+    },
+    "node": {
+      "cache": false,
+      "persistent": true
+    },
+    "node:clean": {
+      "cache": false
     }
   }
 }
