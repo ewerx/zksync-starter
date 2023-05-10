@@ -70,7 +70,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       sass: ^1.62.1
-      tailwind-config: '*'
+      tailwind-config: workspace:*
       tailwindcss: ^3.3.2
       tsconfig: workspace:*
       typechain: ^8.1.1
@@ -96,7 +96,7 @@ importers:
       autoprefixer: 10.4.14_postcss@8.4.23
       eslint-config-custom: link:../../packages/eslint-config-custom
       postcss: 8.4.23
-      tailwind-config: 0.1.2
+      tailwind-config: link:../../packages/tailwind-config
       tailwindcss: 3.3.2
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
@@ -6668,10 +6668,6 @@ packages:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
-
-  /tailwind-config/0.1.2:
-    resolution: {integrity: sha512-7ASrC14CermwwDh0kWeNGrmjZbL7L1fKLopqtSSpVjnwwZvrdo3iSVPWAlmHGkvdEZ7JtZ8UBq3p9qaT+it8+w==}
-    dev: true
 
   /tailwindcss/3.3.2:
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}

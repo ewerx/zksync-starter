@@ -1,81 +1,97 @@
-# Turborepo starter
+# zkSync Turborepo Starter
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+A zkSync + Next.js Turborepo starter kit to quickly ship L2 Web3 apps.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+### Apps
 
-### Apps and Packages
+- `web`: a [Next.js](https://nextjs.org/) app with:
+  - [zkSync Web3 SDK](https://era.zksync.io/docs/api/js/)
+  - [wagmi](https://wagmi.sh/)
+  - [RainbowKit](https://www.rainbowkit.com/)
+  - [ethers.js](https://github.com/ethers-io/ethers.js/)
+- `contracts`: a [Hardhat](https://hardhat.org/) project with:
+  - [zkSync Hardhat plugins](https://era.zksync.io/docs/api/hardhat/)
+  - [TypeChain](https://github.com/dethcrypto/TypeChain)
+  - chai/mocha for testing
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+### Packages
+
+- `generated`: for sharing smart contract artifacts
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `tsconfig`: shared config
+- `tailwind-config`: `tailwind.config.js`: shared config
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Developer Experience
 
-### Utilities
+- [TypeScript](https://www.typescriptlang.org/)
+- [pnpm](https://pnpm.io/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Typechain](https://github.com/dethcrypto/TypeChain)
 
-This Turborepo has some additional tools already setup for you:
+## Get Started
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Install [pnpm](https://pnpm.io/) if you don't have it already:
 
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
+```sh
+npm install -g pnpm
 ```
 
-### Remote Caching
+Install dependencies:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
+```sh
+cd zksync-starter
+pnpm install
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+Start the web app:
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```sh
+turbo dev
 ```
 
-## Useful Links
+#### Run all tests
 
-Learn more about the power of Turborepo:
+```sh
+turbo test
+```
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+> ℹ️ You can run commands in the root of the repo or in any of the apps or packages. See `turbo.json` for monorepo configuration. `pnpm run` to see available commands.
+
+## Contract Development
+
+### Start Local Network
+
+Requires [Docker](https://www.docker.com/), see https://github.com/matter-labs/local-setup for more info.
+
+```sh
+turbo node
+```
+
+### Compile
+
+```sh
+turbo compile
+```
+
+### Deploy
+
+Edit `apps/contracts/hardhat.config.ts` to set RPC URL and deployer private key.
+
+```sh
+turbo deploy
+```
+
+## Resources
+
+This starter kit is based on:
+
+- [zkSync Quickstart Tutorial](https://era.zksync.io/docs/dev/building-on-zksync/hello-world.html)
+- [create-web3-turbo](https://github.com/memoriaXII/create-web3-turbo)
+
+### zkSync
+
+- https://era.zksync.io/docs/
