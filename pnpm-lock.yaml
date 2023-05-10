@@ -64,6 +64,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint-config-custom: workspace:*
       ethers: ^5.7.2
+      generated: workspace:*
       next: ^13.4.1
       postcss: ^8.4.20
       react: ^18.2.0
@@ -80,6 +81,7 @@ importers:
       '@rainbow-me/rainbowkit': 0.12.13_julm6lipsuq4of4foefbt45ffq
       '@typechain/ethers-v5': 10.2.1_7z2fwjd5cuev3ejr4i36eosrry
       ethers: 5.7.2
+      generated: link:../../packages/generated
       next: 13.4.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -111,6 +113,9 @@ importers:
       eslint-config-turbo: 1.9.3_eslint@7.32.0
       eslint-plugin-react: 7.28.0_eslint@7.32.0
 
+  packages/generated:
+    specifiers: {}
+
   packages/local:
     specifiers: {}
 
@@ -133,7 +138,7 @@ importers:
       tailwind-config: workspace:*
       tsconfig: workspace:*
       tsup: ^6.1.3
-      typescript: ^4.9.4
+      typescript: ^4.9.5
     devDependencies:
       '@types/react': 18.2.5
       eslint: 7.32.0
@@ -1070,6 +1075,11 @@ packages:
 
   /@noble/hashes/1.2.0:
     resolution: {integrity: sha512-FZfhjEDbT5GRswV3C6uvLPHMiVD6lQBmpoX5+eSiPaMTXte/IKqI5dykDxzZB/WBeK/CDuQRBWarPdi3FNY2zQ==}
+    dev: true
+
+  /@noble/hashes/1.3.0:
+    resolution: {integrity: sha512-ilHEACi9DwqJB0pw7kv+Apvh50jiiSyR/cQ3y4W7lOR5mhvn/50FLUfsnfJz0BDZtl/RR16kXvptiv6q1msYZg==}
+    dev: false
 
   /@noble/secp256k1/1.7.1:
     resolution: {integrity: sha512-hOUk6AyBFmqVrv7k5WAw/LpszxVbj9gGN4JRkIX52fdFAj1UA61KXmZDvqVEm+pOyec3+fIeZB02LYa/pWOArw==}
@@ -1552,7 +1562,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       '@noble/ed25519': 1.7.3
-      '@noble/hashes': 1.2.0
+      '@noble/hashes': 1.3.0
       '@noble/secp256k1': 1.7.1
       '@solana/buffer-layout': 4.0.1
       agentkeepalive: 4.3.0

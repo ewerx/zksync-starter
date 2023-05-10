@@ -39,7 +39,7 @@ const config: HardhatUserConfig = {
     version: "0.8.17",
   },
   typechain: {
-    outDir: "typechain",
+    outDir: "../../packages/generated/typechain",
     target: "ethers-v5",
   },
 };

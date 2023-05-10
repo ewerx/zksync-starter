@@ -12,6 +12,7 @@
     "@rainbow-me/rainbowkit": "^0.12.13",
     "@typechain/ethers-v5": "^10.2.1",
     "ethers": "^5.7.2",
+    "generated": "workspace:*",
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

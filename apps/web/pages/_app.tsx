@@ -13,19 +13,23 @@ const { chains, provider, webSocketProvider } = configureChains(
   [
     zkSync,
     mainnet,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
-      ? [zkSyncTestnet, goerli]
-      : []),
+    zkSyncTestnet,
+    goerli,
+    // ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
+    //   ? [zkSyncTestnet, goerli]
+    //   : []),
   ],
   [publicProvider()]
 );
 
 const { connectors } = getDefaultWallets({
   appName: "zkSync Greeter",
+  // projectId: "YOUR_PROJECT_ID", // needed for WalletConnect -- get from https://cloud.walletconnect.com/
   chains,
 });
 
 const wagmiClient = createClient({
+  autoConnect: false,
   connectors,
   provider,
   webSocketProvider,
@@ -34,7 +38,12 @@ const wagmiClient = createClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider
+        chains={chains}
+        initialChain={zkSyncTestnet}
+        modalSize="compact"
+        showRecentTransactions={true}
+      >
         <Component {...pageProps} />
       </RainbowKitProvider>
     </WagmiConfig>

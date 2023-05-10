@@ -10,7 +10,8 @@
     "test": {},
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": ["NEXT_PUBLIC_ENABLE_TESTNETS"]
     },
     "clean": {
       "cache": false
