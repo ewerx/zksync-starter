@@ -32,9 +32,7 @@ const Home: NextPage = () => {
             height={37}
             priority
           />
-          <h1 className="mx-2 text-3xl font-semibold">
-            Turborepo zkSync Starter Kit
-          </h1>
+          <h1 className="mx-2 text-3xl font-semibold">Turborepo zkSync Starter Kit</h1>
         </div>
 
         <div className={styles.card}>
@@ -49,10 +47,7 @@ const Home: NextPage = () => {
             rel="noopener noreferrer"
           >
             <h2>⚡ Application</h2>
-            <p>
-              Next.js React app with Typescript, zkSync Web3 SDK, wagmi,
-              RainbowKit, ethers.js
-            </p>
+            <p>Next.js React app with Typescript, zkSync Web3 SDK, wagmi, RainbowKit, ethers.js</p>
           </a>
           <a
             href="https://era.zksync.io/docs/dev/"

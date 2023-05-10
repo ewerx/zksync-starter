@@ -10,10 +10,7 @@ type BalanceResult = {
   balance?: string;
 };
 
-export function useBalance(
-  signer: Signer | undefined,
-  token: Token | undefined
-): BalanceResult {
+export function useBalance(signer: Signer | undefined, token: Token | undefined): BalanceResult {
   const [balanceResult, setBalanceResult] = useState<BalanceResult>({
     isLoading: true,
   });
@@ -28,10 +25,7 @@ export function useBalance(
           token.l1Address === ETH_L1_ADDRESS
             ? await signer.getBalance()
             : await signer.getBalance(token.l2Address);
-        const balance = ethers.utils.formatUnits(
-          balanceInUnits,
-          token.decimals
-        );
+        const balance = ethers.utils.formatUnits(balanceInUnits, token.decimals);
         setBalanceResult({ isLoading: false, balance });
       } catch (e) {
         console.log(e);

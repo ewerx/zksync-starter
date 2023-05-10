@@ -28,10 +28,7 @@ export function useFee(
       try {
         const feeInGas = await contract.estimateGas.setGreeting(newGreeting);
         const gasPriceInUnits = await provider.getGasPrice();
-        const fee = ethers.utils.formatUnits(
-          feeInGas.mul(gasPriceInUnits),
-          feeToken.decimals
-        );
+        const fee = ethers.utils.formatUnits(feeInGas.mul(gasPriceInUnits), feeToken.decimals);
         setFeeResult({ isLoading: false, fee });
       } catch (e) {
         console.log(e);

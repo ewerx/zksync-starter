@@ -1,17 +1,10 @@
 import { useState, useEffect } from "react";
-import {
-  ETH_L1_ADDRESS,
-  greeterAbi,
-  greeterContractAddress,
-} from "../lib/constants";
+import { ETH_L1_ADDRESS, greeterAbi, greeterContractAddress } from "../lib/constants";
 import { Contract, Provider, Signer, utils } from "zksync-web3";
 import { ethers } from "ethers";
 import { Token, TxStatus } from "../lib/types";
 
-export function useGreeter(
-  provider: Provider | undefined,
-  signer: Signer | undefined
-) {
+export function useGreeter(provider: Provider | undefined, signer: Signer | undefined) {
   const [contract, setContract] = useState<Contract | undefined>(undefined);
   const [greeting, setGreeting] = useState("");
   const [txStatus, setTxStatus] = useState<TxStatus>(TxStatus.None);
@@ -44,15 +37,12 @@ export function useGreeter(
       const gasPrice = await provider.getGasPrice();
 
       // get params for gas estimation
-      const paramsForFeeEstimation = utils.getPaymasterParams(
-        testnetPaymaster,
-        {
-          type: "ApprovalBased",
-          minimalAllowance: ethers.BigNumber.from("1"),
-          token: feeToken.l2Address,
-          innerInput: new Uint8Array(),
-        }
-      );
+      const paramsForFeeEstimation = utils.getPaymasterParams(testnetPaymaster, {
+        type: "ApprovalBased",
+        minimalAllowance: ethers.BigNumber.from("1"),
+        token: feeToken.l2Address,
+        innerInput: new Uint8Array(),
+      });
 
       const gasLimit = await contract.estimateGas.setGreeting(newGreeting, {
         customData: {
@@ -91,10 +81,7 @@ export function useGreeter(
       setTxStatus(TxStatus.Preparing);
 
       try {
-        const txHandle = await contract.setGreeting(
-          newGreeting,
-          await getOverrides(newGreeting, feeToken)
-        );
+        const txHandle = await contract.setGreeting(newGreeting, await getOverrides(newGreeting, feeToken));
         setTxStatus(TxStatus.Pending);
 
         await txHandle.wait();

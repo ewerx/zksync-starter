@@ -7,12 +7,8 @@ type TokenSelectorProps = {
   handleSelectionChange: (address: string) => void;
 };
 
-const TokenSelector = ({
-  supportedTokens,
-  handleSelectionChange,
-}: TokenSelectorProps) => {
-  const [selectedTokenAddress, setSelectedTokenAddress] =
-    useState<string>(ETH_L1_ADDRESS);
+const TokenSelector = ({ supportedTokens, handleSelectionChange }: TokenSelectorProps) => {
+  const [selectedTokenAddress, setSelectedTokenAddress] = useState<string>(ETH_L1_ADDRESS);
 
   return (
     <div className="flex flex-col items-center justify-center">

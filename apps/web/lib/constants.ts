@@ -17,8 +17,7 @@ export const zkSyncMainnet: NetworkInfo = {
 };
 
 // replace this with your deployment address
-export const greeterContractAddress =
-  "0xcA265A121192796216BcC6A991BccF523c72b55e"; // testnet
+export const greeterContractAddress = "0xcA265A121192796216BcC6A991BccF523c72b55e"; // testnet
 
 export const ETH_L1_ADDRESS = "0x0000000000000000000000000000000000000000";
 
