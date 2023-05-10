@@ -68,13 +68,13 @@ const Greeter = () => {
       )}
       {isConnected && (
         <>
-          <h1 className="text-2xl font-bold">Current Greeting: {greeting}</h1>
+          <h1 className="text-2xl font-bold">{greeting}</h1>
           <div className="w-full max-w-xs p-8 space-y-6">
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="new-greeting"
               type="text"
-              placeholder="New greeting"
+              placeholder="Enter new greeting"
               onChange={(e) => setNewGreeting(e.target.value)}
             />
             <TokenSelector
@@ -97,6 +97,9 @@ const Greeter = () => {
                 ? fee.error.message
                 : fee.fee}
             </p>
+          </div>
+
+          <div className="flex items-center justify-between">
             <button
               className={`px-4 py-2 bg-gray-900 text-white rounded focus:outline-none focus:shadow-outline ${
                 submitDisabled
@@ -106,7 +109,7 @@ const Greeter = () => {
               disabled={submitDisabled}
               onClick={handleGreetingChange}
             >
-              {buttonText[txStatus] || "Send"}
+              {buttonText()}
             </button>
           </div>
         </>

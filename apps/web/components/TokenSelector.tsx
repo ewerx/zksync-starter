@@ -24,7 +24,7 @@ const TokenSelector = ({
             setSelectedTokenAddress(e.target.value);
             handleSelectionChange(e.target.value);
           }}
-          className="bg-white border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="" disabled>
             Select a token
