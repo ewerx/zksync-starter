@@ -55,28 +55,29 @@ Start the web app:
 turbo dev
 ```
 
-#### Run all tests
-
-```sh
-turbo test
-```
-
 > ℹ️ You can run commands in the root of the repo or in any of the apps or packages. See `turbo.json` for monorepo configuration. `pnpm run` to see available commands.
 
 ## Contract Development
 
 ### Start Local Network
 
-Requires [Docker](https://www.docker.com/), see https://github.com/matter-labs/local-setup for more info.
+Requires [Docker](https://www.docker.com/). See https://github.com/matter-labs/local-setup for more info.
 
 ```sh
 turbo node
 ```
+*The initial setup takes a while and should not be interrupted*
 
 ### Compile
 
 ```sh
 turbo compile
+```
+
+### Test
+
+```sh
+turbo test
 ```
 
 ### Deploy
