@@ -2,6 +2,8 @@
 
 A zkSync + Next.js Turborepo starter kit to quickly ship L2 Web3 apps.
 
+<img width="800" alt="screenshot" src="https://github.com/ewerx/zksync-starter/assets/671604/3a3de31a-4984-4246-947b-d8894c343b2a">
+
 ## What's inside?
 
 ### Apps
@@ -89,8 +91,8 @@ turbo deploy
 
 This starter kit is based on:
 
-- [zkSync Quickstart Tutorial](https://era.zksync.io/docs/dev/building-on-zksync/hello-world.html)
 - [create-web3-turbo](https://github.com/memoriaXII/create-web3-turbo)
+- [zkSync Quickstart Tutorial](https://era.zksync.io/docs/dev/building-on-zksync/hello-world.html)
 
 ### zkSync
 
